@@ -1,0 +1,22 @@
+.container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 2rem 0;
+}
+
+.botaoAbreFormulario {
+    width: 300px;
+    height: 40px;
+    border: 2px dashed #000;
+    background-color: transparent;
+    font-weight: 600;
+    font-size: 1rem;
+    cursor: pointer;
+    transition: .3s;
+}
+
+.formulario {
+    width: 90%;
+    border: 2px dashed #000;
+}

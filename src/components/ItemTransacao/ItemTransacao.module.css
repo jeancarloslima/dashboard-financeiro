@@ -1,0 +1,9 @@
+.container {
+    width: 1024px;
+    overflow: scroll;
+    display: flex;
+    align-items: center;
+    gap: 2rem;
+    border: 1px solid #000;
+    padding: 0 1rem;
+}
