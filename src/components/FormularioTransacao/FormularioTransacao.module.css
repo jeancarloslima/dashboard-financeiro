@@ -47,6 +47,25 @@
 .inputValor {
     padding: .7rem 1rem;
     text-align: center;
+    -moz-appearance: textfield;
+}
+
+.inputValor::-webkit-outer-spin-button,
+.inputValor::-webkit-inner-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+}
+
+.inputDescricao, .inputValor {
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    outline: none;
+    transition: 0.3s;
+}
+
+.inputDescricao:focus, .inputValor:focus {
+    border-color: #8ac926;
+    box-shadow: 0 0 5px rgba(138, 201, 38, 0.3);
 }
 
 .containerBotoesFormulario {
