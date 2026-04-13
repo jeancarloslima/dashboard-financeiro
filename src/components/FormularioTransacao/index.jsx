@@ -1,8 +1,10 @@
-import { useState } from "react";
+import { useRef, useState } from "react";
 import styles from "./FormularioTransacao.module.css";
 
-export default function FormularioTransacao() {
+export default function FormularioTransacao({ dispatch }) {
   const [formularioAberto, setFormularioAberto] = useState(false);
+  const inputDescricao = useRef(null);
+  const inputValor = useRef(null);
   const [tipo, setTipo] = useState("Entrada");
 
   return (
@@ -16,12 +18,30 @@ export default function FormularioTransacao() {
         </button>
       )}
       {formularioAberto && (
-        <form className={styles.formulario}>
+        <form
+          className={styles.formulario}
+          onSubmit={(e) => {
+            e.preventDefault();
+
+            const descricaoDigitada = inputDescricao.current.value;
+            const valorDigitado = Number(inputValor.current.value);
+
+            const novaTransacao = {
+              id: Date.now(),
+              descricao: descricaoDigitada,
+              valor: valorDigitado,
+              tipo: tipo
+            }
+
+            dispatch({ type: "ADICIONAR_TRANSACAO", payload: novaTransacao });
+          }}
+        >
           <div className={styles.containerInputFormulario}>
             <label className={styles.label} htmlFor="descricao">
               Descrição
             </label>
             <input
+              ref={inputDescricao}
               className={styles.inputDescricao}
               type="text"
               name="descricao"
@@ -33,6 +53,7 @@ export default function FormularioTransacao() {
           <div className={styles.containerInputFormulario}>
             <label htmlFor="valor">Valor</label>
             <input
+              ref={inputValor}
               className={styles.inputValor}
               type="number"
               name="valor"
