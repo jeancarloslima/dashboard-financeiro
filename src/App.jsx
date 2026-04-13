@@ -1,4 +1,4 @@
-import { useEffect, useReducer, useState } from "react";
+import { useEffect, useReducer } from "react";
 import styles from "./App.module.css";
 import FormularioTransacao from "./components/FormularioTransacao";
 import ListaTransacoes from "./components/ListaTransacoes";
