@@ -1,12 +1,20 @@
 import ItemTransacao from "../ItemTransacao";
 import styles from "./ListaTransacoes.module.css";
 
-export default function ListaTransacoes() {
-    return (
-        <div className={styles.container}>
-            <h2 className={styles.titulo}>Extrato</h2>
-            <ItemTransacao descricao="Salário" valor={5000} tipo="Entrada" />
-            <ItemTransacao descricao="Conta de Luz" valor={150} tipo="Saída" />
-        </div>
-    )
+export default function ListaTransacoes({ transacoes, deletarTransacao }) {
+  return (
+    <div className={styles.container}>
+      <h2 className={styles.titulo}>Extrato</h2>
+      {transacoes.map((item) => (
+        <ItemTransacao
+          key={item.id}
+          id={item.id}
+          descricao={item.descricao}
+          valor={item.valor}
+          tipo={item.tipo}
+          deletarTransacao={deletarTransacao}
+        />
+      ))}
+    </div>
+  );
 }

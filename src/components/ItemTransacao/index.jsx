@@ -1,6 +1,7 @@
+import { memo } from "react";
 import styles from "./ItemTransacao.module.css";
 
-export default function ItemTransacao({ descricao, valor, tipo }) {
+function ItemTransacao({ id, descricao, valor, tipo, deletarTransacao }) {
   const isEntrada = tipo === "Entrada";
 
   return (
@@ -17,9 +18,11 @@ export default function ItemTransacao({ descricao, valor, tipo }) {
       >
         {tipo}
       </span>
-      <button className={styles.btnDeletar} title="Deletar transação">
+      <button onClick={() => deletarTransacao(id)} className={styles.btnDeletar} title="Deletar transação">
         🗑️
       </button>
     </div>
   );
 }
+
+export default memo(ItemTransacao);

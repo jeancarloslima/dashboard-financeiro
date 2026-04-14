@@ -1,4 +1,4 @@
-import { useEffect, useReducer } from "react";
+import { useCallback, useEffect, useReducer } from "react";
 import styles from "./App.module.css";
 import FormularioTransacao from "./components/FormularioTransacao";
 import ListaTransacoes from "./components/ListaTransacoes";
@@ -31,6 +31,10 @@ function App() {
     localStorage.setItem("transacoes", JSON.stringify(transacoes));
   }, [transacoes]);
 
+  const deletarTransacao = useCallback((idParaDeletar) => {
+    dispatch({ type: "REMOVER_TRANSACAO", payload: idParaDeletar });
+  }, []);
+
   return (
     <div className={styles.app}>
       <header>
@@ -43,7 +47,10 @@ function App() {
       <main>
         <div>
           <FormularioTransacao dispatch={dispatch} />
-          <ListaTransacoes transacoes={transacoes} dispatch={dispatch} />
+          <ListaTransacoes
+            transacoes={transacoes}
+            deletarTransacao={deletarTransacao}
+          />
         </div>
       </main>
     </div>
