@@ -2,6 +2,8 @@
 
 Uma aplicação web robusta para controlo financeiro pessoal. Este dashboard permite o acompanhamento detalhado de receitas e despesas através de métricas claras.
 
+<img width="1207" height="700" alt="dashboard-financeiro-print" src="https://github.com/user-attachments/assets/115f7816-05d8-4c01-ab40-cdcafe73efcb" />
+
 ## 💻 Sobre o Projeto
 
 O objetivo deste projeto foi construir uma interface de manipulação de dados financeiros, demonstrando boas práticas de arquitetura em React, componentização e gestão do estado da aplicação para facilitar a visualização financeira. Foco na aplicação dos hooks useReducer, useMemo, useCallback e no memo(). 
