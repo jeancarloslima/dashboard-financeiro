@@ -21,6 +21,10 @@ O objetivo deste projeto foi construir uma interface de manipulação de dados f
 - **[React Icons]** - Ícones visuais do dashboard
 - **[CSS Modules]** - Estilização
 
+## 🔗 Acesse o Projeto
+
+- https://dashboard-financeiro-eight-sigma.vercel.app/
+
 ## 🚀 Como executar localmente
 
 1. Clone o repositório:
